@@ -12,9 +12,9 @@ fetch("http://localhost:3000/books")
             temp +="<td>"+u.pages+"</td>";
             temp +="<td>"+u.price+"</td>";
             temp +="<td>"+u.rating+"</td>";
-            temp +="<td>"+u.tags+"</td>";
-            temp +="<td>"+u.series+"</td>";
-            temp +="<td>"+u.votes+"</td>";
+            // temp +="<td>"+u.tags+"</td>";
+            // temp +="<td>"+u.series+"</td>";
+            // temp +="<td>"+u.votes+"</td>";
             temp +="<td onclick='onDelete()'>"+ '<button class="delete">delete</button>'+"</td>";
             temp +="<td onclick='details()'>"+ '<a href="./bookDetails.html"><button class="details">Details</button></a>'+"</td></tr>";
         })

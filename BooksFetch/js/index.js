@@ -4,7 +4,7 @@ const searchForm = document.querySelector('.search');
 
 const renderPosts = async (term) => {
   console.log(term);
-  let uri = 'http://localhost:3000/books?_sort=rating&_order=desc';
+  let uri = 'http://localhost:5000/books?_sort=rating&_order=desc';
   if (term) {
     uri += `&q=${term}`
   }
@@ -25,8 +25,8 @@ const renderPosts = async (term) => {
         <h4>Author: ${post.author}</h4>
         <p><b>Rating:</b>${post.rating}</p>
         <p><small>${post.votes} votes,${post.pages} pages</small></p>
-        <p>${post.body.slice(0, 200)}...</p>
-        <a href="/details.html?id=${post.id}">Read more</a>
+        <p>${post.description}</p>
+        <a href="./details.html?id=${post._id}">Read more</a>
       </div>
       </div>
     `

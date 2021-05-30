@@ -15,13 +15,13 @@ const createPost = async (e) => {
     rating:0
   }
 
-  await fetch('http://localhost:3000/books', {
+  await fetch('http://localhost:5000/books', {
     method: 'POST',
     body: JSON.stringify(doc),
     headers: { 'Content-Type': 'application/json' }
   })
 
-  window.location.replace('/')
+  window.location.replace('http://127.0.0.1:5500/BooksFetch/index.html')
 }
 
 form.addEventListener('submit', createPost);

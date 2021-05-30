@@ -1,30 +1,30 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import {router} from './books'
-//const express=require('express');
-//const mongoose=require('mongoose');
+import express from "express";
+import mongoose from "mongoose";
+import * as dotenv from "dotenv";
+import { router } from "./router/books";
+import { userRouter } from "./router/userDetails";
+import cors from "cors";
 
-const app=express();
+dotenv.config(); //ENV CONFIGURATION
+const app = express();
 app.use(express.json());
-//const url="mongodb://localhost/booking";
-const url="mongodb+srv://Abhishek_Mern:Abhishek_Mern@mern.js49d.mongodb.net/BMS_Mern?retryWrites=true&w=majority"
-mongoose.connect(url,
-    {
-        useNewUrlParser:true,
-        useUnifiedTopology: true 
-    });
+app.use(cors());
+app.use("/books", router);
+app.use("/userdetails", userRouter);
+const url = "mongodb://localhost/booking";
+//const url="mongodb+srv://Abhishek_Mern:Abhishek_Mern@mern.js49d.mongodb.net/BMS_Mern?retryWrites=true&w=majority"
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-const con=mongoose.connection;
+const connect = mongoose.connection;
 
-con.on('open',function(){
-    console.log('Connected.....');
-})
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log("Server Created on Port", port);
+});
 
-//const bookRouter=require("./books");
-app.use('/books',router);
-
-const port=5000;
-app.listen(port,()=>{
-    console.log("Server Created on Port",port);
-})
-
+connect.on("open", function () {
+  console.log("Connected.....");
+});

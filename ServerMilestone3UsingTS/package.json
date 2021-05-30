@@ -5,17 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently -k -n \"tsc,server\" \"tsc --watch\"  \"nodemon app.js\""
+    "start": "concurrently -k -c red,blue -n \"tsc,server\" \"tsc --watch\"  \"nodemon app.js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.10",
+    "@types/jsonwebtoken": "^8.5.1",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.6",
-    "mongoose": "^5.12.3"
+    "mongoose": "^5.12.3",
+    "twilio": "^3.62.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",

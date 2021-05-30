@@ -1,13 +1,13 @@
 export class form {
-    editDetails = function (req: any, res: any) {
-        res.end(`
+  editDetails = function (req: any, res: any) {
+    res.end(`
         <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Documen</title>
+        <title>Document</title>
     </head>
     <body>
         <form action="/books/edit" method="PUT">
@@ -21,10 +21,10 @@ export class form {
     </body>
     </html>
     `);
-    }
+  };
 
-    addDetails = (req: any, res: any) => {
-        res.end(`
+  addDetails = (req: any, res: any) => {
+    res.end(`
         <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -44,5 +44,5 @@ export class form {
     </body>
     </html>
     `);
-    }
+  };
 }

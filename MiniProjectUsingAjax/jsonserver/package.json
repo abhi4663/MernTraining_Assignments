@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "json:server": "json-server db.json"
+    "json:server": "json-server db.json",
+    "start":"nodemon ../../ServerMilestone3UsingJS/app.js"
   },
   "keywords": [],
   "author": "",
